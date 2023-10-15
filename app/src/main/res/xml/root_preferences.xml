@@ -1,0 +1,21 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory app:title="Layout">
+
+        <SwitchPreferenceCompat
+            app:key="layoutSwap"
+            app:title="Swap Default Layout"
+            app:defaultValue="false"
+            android:summary="Enable Metric units as default"/>
+
+        <ListPreference
+            android:entries="@array/pref_historyMaxLines"
+            android:entryValues="@array/history_MaxLines"
+            app:key="maxLines"
+            app:title="Set History Maximum"
+            android:summary="Choose the maximum amount of conversion in Recent History"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

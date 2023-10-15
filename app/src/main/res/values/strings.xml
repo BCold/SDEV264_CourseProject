@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">SDEV264_CourseProject</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+   <string-array name="pref_historyMaxLines">
+       <item>10 Conversions</item>
+       <item>15 Conversions</item>
+       <item>20 Conversions</item>
+       <item>25 Conversions</item>
+       <item>30 Conversions</item>
+   </string-array>
+    <string-array name="history_MaxLines">
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+    </string-array>
+</resources>

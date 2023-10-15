@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#6750A2"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@id/convertedUnitText"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="120dp"
+        android:clickable="false"
+        android:editable="true"
+        android:ems="10"
+        android:focusableInTouchMode="false"
+        android:hint="Converted Unit"
+        android:inputType="numberDecimal"
+        android:longClickable="false"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@id/baseUnitText"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="120dp"
+        android:ems="10"
+        android:hint="Base Unit"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Unit Converter"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@id/convertBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="120dp"
+        android:backgroundTint="#5D3FD3"
+        android:contentDescription="Convert Button"
+        android:onClick="convertItem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_convert"
+        app:tint="#FFFFFF" />
+
+    <Button
+        android:id="@id/historyBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="428dp"
+        android:backgroundTint="#5D3FD3"
+        android:enabled="true"
+        android:onClick="openHistory"
+        android:text="Recent Conversions"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@id/errorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:enabled="true"
+        android:text="Must enter number to convert"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#FF1100"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@id/linearLayout1"
+        android:layout_width="140dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="170dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@+id/baseUnitText"
+        app:layout_constraintStart_toStartOf="@+id/baseUnitText"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioGroup
+            android:id="@id/primaryGroup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:id="@id/kilometersRadio"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:buttonTint="#5D3FD3"
+                android:checked="true"
+                android:onClick="checkKilometers"
+                android:text="Kilometers"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@id/celsiusRadio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#5D3FD3"
+                android:onClick="checkCelsius"
+                android:text="Celsius"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@id/kilogramsRadio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#5D3FD3"
+                android:onClick="checkKilograms"
+                android:text="Kilograms"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@id/litersRadio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#5D3FD3"
+                android:onClick="checkLiters"
+                android:text="Liters"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@id/metersRadio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#5D3FD3"
+                android:onClick="checkMeters"
+                android:text="Meters"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@id/linearLayout2"
+        android:layout_width="140dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="170dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioGroup
+            android:id="@id/secondaryGroup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:id="@id/milesRadio"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:buttonTint="#5D3FD3"
+                android:checked="true"
+                android:onClick="checkKilometers"
+                android:text="Miles"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@id/fahrenheitRadio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#5D3FD3"
+                android:onClick="checkCelsius"
+                android:text="Fahrenheit"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@id/poundsRadio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#5D3FD3"
+                android:onClick="checkKilograms"
+                android:text="Pounds"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@id/gallonsRadio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#5D3FD3"
+                android:onClick="checkLiters"
+                android:text="Gallons"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@id/feetRadio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#5D3FD3"
+                android:onClick="checkMeters"
+                android:text="Feet"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <Button
+        android:id="@id/prefBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#5D3FD3"
+        android:onClick="openPrefs"
+        android:text="Settings"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@id/aboutBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#5D3FD3"
+        android:onClick="openHelp"
+        android:text="Help"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@id/tempHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="162dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
